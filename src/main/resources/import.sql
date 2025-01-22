@@ -1,3 +1,18 @@
+-- Inserção na tabela tb_game_list: Roguelike Games
+INSERT INTO tb_game_list (name) VALUES ('Roguelike Games');
+
+-- Inserção na tabela tb_game_list: Platformer Games
+INSERT INTO tb_game_list (name) VALUES ('Platformer Games');
+
+-- Inserção na tabela tb_game_list: Sandbox Games
+INSERT INTO tb_game_list (name) VALUES ('Sandbox Games');
+
+-- Inserção na tabela tb_game_list: Shooter Games
+INSERT INTO tb_game_list (name) VALUES ('Shooter Games');
+
+-- Inserção na tabela tb_game_list: Simulation Games
+INSERT INTO tb_game_list (name) VALUES ('Simulation Games');
+
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('The Binding of Isaac: Rebirth', 4.5, 2014, 'Roguelike, Shooter', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/Brendon3578/java-dslist/main/game-images/the-binding-of-isaac-rebirth.jpg', 'A randomly generated action RPG shooter.', 'Isaac escapes into the basement facing droves of deranged enemies, lost brothers and sisters, his fears, and eventually his mother.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Terraria', 4.6, 2011, 'Action, Adventure', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/Brendon3578/java-dslist/main/game-images/terraria.jpg', 'A sandbox adventure game.', 'Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. The world is your canvas and the ground itself is your paint.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Celeste', 4.7, 2018, 'Platform', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/Brendon3578/java-dslist/main/game-images/celeste.jpg', 'A platformer about climbing a mountain.', 'Help Madeline survive her inner demons on her journey to the top of Celeste Mountain, in this super-tight, hand-crafted platformer from the creators of TowerFall.');
@@ -11,3 +26,39 @@ INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_d
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Rain World', 4.2, 2017, 'Action, Platform', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/Brendon3578/java-dslist/main/game-images/rain-world.jpg', 'A survival platformer.', 'You are a slugcat. The world around you is full of danger, and you must face it alone. Precarious predators lurk around every corner, and the constant torrential downpour threatens to drown all life.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Graveyard Keeper', 4.1, 2018, 'Simulation, RPG', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/Brendon3578/java-dslist/main/game-images/graveyard-keeper.jpg', 'A graveyard-themed management game.', 'Build and manage your own graveyard while finding shortcuts to cut costs, expand into entertainment with witch-burning festivals, and scare nearby villagers into attending church.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Portal', 4.8, 2007, 'Puzzle, Platform', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/Brendon3578/java-dslist/main/game-images/portal.jpg', 'A first-person puzzle-platform game.', 'Solve physical puzzles and challenges by opening portals to maneuver objects, and yourself, through space.');
+
+-- Inserção na tabela tb_belonging: The Binding of Isaac: Rebirth em Roguelike Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (1, 1, 0);
+
+-- Inserção na tabela tb_belonging: Dead Cells em Roguelike Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (1, 9, 1);
+
+-- Inserção na tabela tb_belonging: Celeste em Platformer Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 3, 0);
+
+-- Inserção na tabela tb_belonging: Blasphemous em Platformer Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 7, 1);
+
+-- Inserção na tabela tb_belonging: Rain World em Platformer Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 11, 2);
+
+-- Inserção na tabela tb_belonging: Minecraft em Sandbox Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (3, 5, 0);
+
+-- Inserção na tabela tb_belonging: Terraria em Sandbox Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (3, 2, 1);
+
+-- Inserção na tabela tb_belonging: Half-Life 2 em Shooter Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (4, 4, 0);
+
+-- Inserção na tabela tb_belonging: Portal em Shooter Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (4, 13, 1);
+
+-- Inserção na tabela tb_belonging: Stardew Valley em Simulation Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (5, 8, 0);
+
+-- Inserção na tabela tb_belonging: Slime Rancher em Simulation Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (5, 10, 1);
+
+-- Inserção na tabela tb_belonging: Graveyard Keeper em Simulation Games
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (5, 12, 2);
