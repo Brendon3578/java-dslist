@@ -13,7 +13,8 @@ Este projeto foi desenvolvido durante o Intensivão Java Spring do DevSuperior p
 - **Visualização de Jogos**: Permite listar todos os jogos disponíveis.
 - **Visualização de Jogos por Categoria**: Permite listar jogos por categoria específica.
 - **Visualização de Categorias**: Permite listar todas as categorias de jogos disponíveis.
-
+- **Reordenar Jogos na Lista**: Permite mudar a posição dos jogos dentro de uma lista.
+- 
 ## 🛠️ Estrutura do Código
 
 O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em camadas:
@@ -67,6 +68,17 @@ O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em 
       ]
       ```
 
+- `POST /lists/{listId}/replacement`: Permite reordenar a posição dos jogos dentro de uma lista específica.
+    - Payload do request:
+      ```json
+      {
+        "sourceIndex": 0,
+        "destinationIndex": 2
+      }
+      ```
+    - Descrição: Move as posições dos jogos de uma posição `sourceIndex` para `destinationIndex` dentro da lista especificada por `listId` e re-organiza os jogos seguintes.
+
+
 ## 📚 Tecnologias Utilizadas
 
 - **Java**
@@ -100,7 +112,10 @@ Ao rodar o sistema, o usuário pode visualizar jogos, suas categorias e jogos po
     ```sh
     curl http://localhost:8080/lists
     ```
-
+4. Reordenar a posição dos jogos dentro de uma lista específica (por exemplo, lista de ID 1):
+   ```sh
+   curl -X POST http://localhost:8080/lists/1/replacement -H "Content-Type: application/json" -d '{"sourceIndex":0,"destinationIndex":2}'
+    ```
 
 ---
 
