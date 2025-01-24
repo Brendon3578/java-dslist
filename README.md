@@ -89,17 +89,17 @@ spring.profiles.active=${APP_PROFILE:test}
 Ao rodar o sistema, o usuário pode visualizar jogos, suas categorias e jogos por categoria através das rotas da API. Aqui está um exemplo de como usar o sistema:
 
 1. Visualizar todos os jogos disponíveis:
-   ```sh
-   curl http://localhost:8080/games
-   ```
+    ```sh
+    curl http://localhost:8080/games
+    ```
 2. Visualizar jogos de uma categoria específica (por exemplo, lista de ID 1):
-   ```sh
-   curl http://localhost:8080/lists/1/games
-   ```
+    ```sh
+    curl http://localhost:8080/lists/1/games
+    ```
 3. Visualizar todas as categorias de jogos:
-   ```sh
+    ```sh
     curl http://localhost:8080/lists
-   ```
+    ```
 
 
 ---
