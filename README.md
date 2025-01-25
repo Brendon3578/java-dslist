@@ -9,7 +9,9 @@ Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que
 ![Diagrama das Entidades do Projeto](./docs/diagram.svg)
 
 <small>
+
 Diagrama de Entidade-Relacionamento do Projeto
+
 </small>
 
 ## 💻 Descrição
