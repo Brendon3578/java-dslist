@@ -6,7 +6,7 @@
 
 Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que utiliza PostgreSQL como banco de dados. O sistema foi criado para exibir listas de jogos e categorizá-los.
 
-![Diagrama das Entidades do Projeto](.\docs\diagram.svg)
+![Diagrama das Entidades do Projeto](./docs/diagram.svg)
 
 <small>
 Diagrama de Entidade-Relacionamento do Projeto
