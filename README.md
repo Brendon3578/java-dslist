@@ -4,7 +4,7 @@
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que utiliza PostgreSQL como banco de dados. O sistema foi criado para exibir listas de jogos e categorizá-lo
+Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que utiliza PostgreSQL como banco de dados. Essa api foi criado para um domínio de sistema que é capaz de listar jogos dentro de uma categoria, e você ser capaz de organizar as posições dos jogos dentro dessa lista da maneira que quiser.
 
 <br>
 
@@ -14,7 +14,7 @@ Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que
 
 O `DSList` é um sistema de gerenciamento de listas de jogos.
 Ele permite ao usuário visualizar jogos e suas respectivas categorias.
-Este projeto foi desenvolvido durante o Intensivão Java Spring do DevSuperior para praticar e reforçar conceitos de APIs RESTful com Spring Boot e manipulação de dados com PostgreSQL.
+Este projeto foi desenvolvido durante o Intensivão Java Spring do DevSuperior para praticar e reforçar conceitos de APIs RESTful com Spring Boot e manipulação de dados com o banco de dados PostgreSQL.
 
 ## 🔎 Funcionalidades
 
@@ -102,7 +102,7 @@ O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em 
 Antes de utilizar, é importante alterar o perfil utilizado pela API pelo arquivo `application.properties` localizado em *src/main/resources*.
 
 - É possível mudar para os perfis `:dev` ou `:prod` para usar o postgresql na porta 5432 (é necessário ter criado o banco dslist) e ter executado a query do arquivo `create.sql` que está na pasta raiz do projeto.
-- Ou utilizar o perfil `:test` para utilizad o banco de dados em memória H2.
+- Ou utilizar o perfil `:test` que utiliza o banco de dados em memória H2.
 
 ```properties
 # change to :dev or :prod or :test
