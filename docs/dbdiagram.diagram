@@ -1,0 +1,26 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table games {
+  id int [primary key, increment] // primary key
+  title varchar
+  year int
+  imgUrl varchar
+  shortDescription varchar
+  longDescription varchar
+}
+
+Table gamelists {
+  id int [primary key, increment] // primary key
+  name varchar
+}
+
+Table belongings {
+  list_id int  // foreign key
+  game_id int // foreign key
+  position int
+}
+
+// Relationships
+Ref: belongings.list_id > gamelists.id
+Ref: belongings.game_id > games.id

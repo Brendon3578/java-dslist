@@ -1,6 +1,16 @@
 # DSList (Java Spring Web API RESTful)
 
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+
 Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que utiliza PostgreSQL como banco de dados. O sistema foi criado para exibir listas de jogos e categorizá-los.
+
+![Diagrama das Entidades do Projeto](.\docs\diagram.svg)
+
+<small>
+Diagrama de Entidade-Relacionamento do Projeto
+</small>
 
 ## 💻 Descrição
 
