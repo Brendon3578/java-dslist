@@ -4,15 +4,11 @@
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 
-Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que utiliza PostgreSQL como banco de dados. O sistema foi criado para exibir listas de jogos e categorizá-los.
+Este projeto é uma aplicação Spring Web API RESTful desenvolvida em Java, que utiliza PostgreSQL como banco de dados. O sistema foi criado para exibir listas de jogos e categorizá-lo
+
+<br>
 
 ![Diagrama das Entidades do Projeto](./docs/diagram.svg)
-
-<small>
-
-Diagrama de Entidade-Relacionamento do Projeto
-
-</small>
 
 ## 💻 Descrição
 
@@ -26,7 +22,7 @@ Este projeto foi desenvolvido durante o Intensivão Java Spring do DevSuperior p
 - **Visualização de Jogos por Categoria**: Permite listar jogos por categoria específica.
 - **Visualização de Categorias**: Permite listar todas as categorias de jogos disponíveis.
 - **Reordenar Jogos na Lista**: Permite mudar a posição dos jogos dentro de uma lista.
-- 
+
 ## 🛠️ Estrutura do Código
 
 O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em camadas:
@@ -38,11 +34,11 @@ O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em 
 - **Repositories**: Contém os repositórios JPA que gerenciam a persistência e recuperação dos dados.
 - **Services**: Contém os serviços que implementam a lógica de negócio do aplicativo.
 
-
 ## 🌐 Rotas da API
 
 - `GET /games`: Retorna um array de todos os jogos disponíveis.
-    - Exemplo de retorno:
+  - Exemplo de retorno:
+  
       ```json
       [
         {
@@ -56,7 +52,8 @@ O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em 
       ```
 
 - `GET /lists/1/games`: Retorna um array de jogos pertencentes à lista de categorias de ID 1.
-    - Exemplo de retorno:
+  - Exemplo de retorno:
+
       ```json
       [
         {
@@ -70,7 +67,8 @@ O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em 
       ```
 
 - `GET /lists`: Retorna um array de todas as categorias de jogos disponíveis.
-    - Exemplo de retorno:
+  - Exemplo de retorno:
+
       ```json
       [
         {
@@ -81,15 +79,16 @@ O projeto segue a estrutura padrão de um aplicativo Spring Boot, organizado em 
       ```
 
 - `POST /lists/{listId}/replacement`: Permite reordenar a posição dos jogos dentro de uma lista específica.
-    - Payload do request:
+  - Payload do request:
+
       ```json
       {
         "sourceIndex": 0,
         "destinationIndex": 2
       }
       ```
-    - Descrição: Move as posições dos jogos de uma posição `sourceIndex` para `destinationIndex` dentro da lista especificada por `listId` e re-organiza os jogos seguintes.
 
+  - Descrição: Move as posições dos jogos de uma posição `sourceIndex` para `destinationIndex` dentro da lista especificada por `listId` e re-organiza os jogos seguintes.
 
 ## 📚 Tecnologias Utilizadas
 
@@ -113,18 +112,25 @@ spring.profiles.active=${APP_PROFILE:test}
 Ao rodar o sistema, o usuário pode visualizar jogos, suas categorias e jogos por categoria através das rotas da API. Aqui está um exemplo de como usar o sistema:
 
 1. Visualizar todos os jogos disponíveis:
+
     ```sh
     curl http://localhost:8080/games
     ```
+
 2. Visualizar jogos de uma categoria específica (por exemplo, lista de ID 1):
+
     ```sh
     curl http://localhost:8080/lists/1/games
     ```
+
 3. Visualizar todas as categorias de jogos:
+
     ```sh
     curl http://localhost:8080/lists
     ```
+
 4. Reordenar a posição dos jogos dentro de uma lista específica (por exemplo, lista de ID 1):
+
    ```sh
    curl -X POST http://localhost:8080/lists/1/replacement -H "Content-Type: application/json" -d '{"sourceIndex":0,"destinationIndex":2}'
     ```
