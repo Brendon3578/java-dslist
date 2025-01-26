@@ -27,7 +27,7 @@ public class GameService {
 
     public GameDTO findById(@PathVariable Long id) {
         Game game = gameRepository.findById(id)
-            .orElseThrow(() -> new GameNotFoundException(id));
+                .orElseThrow(() -> new GameNotFoundException(id));
 
         return new GameDTO(game);
     }

@@ -38,15 +38,11 @@ public class GameListService {
                 .orElseThrow(() -> new GameListNotFoundException(listId));
 
 
-
         var gameList = gameRepository.searchByList(list.getId());
         var listSize = gameList.size();
 
-
         if (sourceIndex < 0 || sourceIndex >= listSize || destinationIndex < 0 || destinationIndex > listSize)
             throw new IllegalMoveException();
-
-
 
         GameMinProjection obj = gameList.remove(sourceIndex);
 

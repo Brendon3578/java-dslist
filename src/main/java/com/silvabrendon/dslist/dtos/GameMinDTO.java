@@ -3,46 +3,26 @@ package com.silvabrendon.dslist.dtos;
 import com.silvabrendon.dslist.entities.Game;
 import com.silvabrendon.dslist.projections.GameMinProjection;
 
-public class GameMinDTO {
-    private Long id;
-    private String title;
-    private Integer year;
-    private String imgUrl;
-    private String shortDescription;
 
+public record GameMinDTO(Long id, String title, Integer year, String imgUrl, String shortDescription
+) {
     public GameMinDTO(Game entity) {
-        id = entity.getId();
-        title = entity.getTitle();
-        year = entity.getYear();
-        imgUrl = entity.getImgUrl();
-        shortDescription = entity.getShortDescription();
+        this(
+                entity.getId(),
+                entity.getTitle(),
+                entity.getYear(),
+                entity.getImgUrl(),
+                entity.getShortDescription()
+        );
     }
 
     public GameMinDTO(GameMinProjection projection) {
-        id = projection.getId();
-        title = projection.getTitle();
-        year = projection.getGameYear();
-        imgUrl = projection.getImgUrl();
-        shortDescription = projection.getShortDescription();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public String getShortDescription() {
-        return shortDescription;
+        this(
+                projection.getId(),
+                projection.getTitle(),
+                projection.getGameYear(),
+                projection.getImgUrl(),
+                projection.getShortDescription()
+        );
     }
 }
