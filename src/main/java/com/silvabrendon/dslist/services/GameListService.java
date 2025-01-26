@@ -2,6 +2,8 @@ package com.silvabrendon.dslist.services;
 
 import com.silvabrendon.dslist.dtos.GameListDTO;
 import com.silvabrendon.dslist.entities.GameList;
+import com.silvabrendon.dslist.exceptions.GameListNotFoundException;
+import com.silvabrendon.dslist.exceptions.IllegalMoveException;
 import com.silvabrendon.dslist.projections.GameMinProjection;
 import com.silvabrendon.dslist.repositories.GameListRepository;
 import com.silvabrendon.dslist.repositories.GameRepository;
@@ -31,17 +33,31 @@ public class GameListService {
 
     @Transactional
     public void move(Long listId, int sourceIndex, int destinationIndex) {
-        List<GameMinProjection> list = gameRepository.searchByList(listId);
-        GameMinProjection obj = list.remove(sourceIndex);
 
-        list.add(destinationIndex, obj);
+        var list = gameListRepository.findById(listId)
+                .orElseThrow(() -> new GameListNotFoundException(listId));
 
-        int min = sourceIndex < destinationIndex ? sourceIndex : destinationIndex;
 
-        int max = sourceIndex < destinationIndex ? destinationIndex : sourceIndex;
+
+        var gameList = gameRepository.searchByList(list.getId());
+        var listSize = gameList.size();
+
+
+        if (sourceIndex < 0 || sourceIndex >= listSize || destinationIndex < 0 || destinationIndex > listSize)
+            throw new IllegalMoveException();
+
+
+
+        GameMinProjection obj = gameList.remove(sourceIndex);
+
+        gameList.add(destinationIndex, obj);
+
+        int min = Math.min(sourceIndex, destinationIndex);
+
+        int max = Math.max(sourceIndex, destinationIndex);
 
         for (int i = min; i <= max; i++) {
-            gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
+            gameListRepository.updateBelongingPosition(listId, gameList.get(i).getId(), i);
         }
     }
 
