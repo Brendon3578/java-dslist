@@ -1,8 +1,11 @@
 package com.silvabrendon.dslist.services;
 
+import com.silvabrendon.dslist.dtos.GameDTO;
 import com.silvabrendon.dslist.dtos.GameListDTO;
+import com.silvabrendon.dslist.entities.Game;
 import com.silvabrendon.dslist.entities.GameList;
 import com.silvabrendon.dslist.exceptions.GameListNotFoundException;
+import com.silvabrendon.dslist.exceptions.GameNotFoundException;
 import com.silvabrendon.dslist.exceptions.IllegalMoveException;
 import com.silvabrendon.dslist.projections.GameMinProjection;
 import com.silvabrendon.dslist.repositories.GameListRepository;
@@ -10,6 +13,7 @@ import com.silvabrendon.dslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -20,6 +24,15 @@ public class GameListService {
 
     @Autowired
     private GameRepository gameRepository;
+
+
+    @Transactional(readOnly = true)
+    public GameListDTO findById(@PathVariable Long listId) {
+        GameList list = gameListRepository.findById(listId)
+                .orElseThrow(() -> new GameListNotFoundException(listId));
+
+        return new GameListDTO(list);
+    }
 
 
     @Transactional(readOnly = true)
